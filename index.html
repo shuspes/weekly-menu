@@ -3,15 +3,11 @@
 
   </body>
   <script src="remoteStorage.js"></script>  
+  <script src="storage.js"></script>    
   <script>
     var remoteDocument = "";
     var remoteStorage = new RemoteStorage(remoteDocument);
-    remoteStorage.getData()
-      .then(data => 
-        console.log("data", data)
-      )
-      .catch(err => 
-        console.log("Some error with getData: " + err)
-    );
+    var storage = new Storage(remoteStorage);
+    storage.init();
   </script>
 </html>
