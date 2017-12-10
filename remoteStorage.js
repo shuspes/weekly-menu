@@ -1,4 +1,4 @@
-var RemoteStorage = (function() {
+(function() {
   var RemoteStorage = function(remoteDocument) {
     this.remoteDocument = remoteDocument;    
   };
