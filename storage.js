@@ -1,4 +1,4 @@
-(function() {
+var Storage = (function() {
   var Storage = function(remoteStorage, storageId) {
     this.storageId = storageId || "weeklyMenu";
     this.remoteStorage = remoteStorage;

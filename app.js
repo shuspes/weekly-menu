@@ -1,6 +1,7 @@
 (function() {
   var remoteDocument = "weeklyMenuRemoteDocument";
   var storageId = "weeklyMenu";
+  var rootElement = document.getElementById("weeklyMenuApp");
 
   var page = getPage();  
 
@@ -23,6 +24,9 @@
 
   function openRemoteDocumentForm() {
     console.log("create remote document form");
+
+    var remoteDocumentForm = new AddRemoteDocumentForm(rootElement);
+    remoteDocumentForm.init();
   }
 
   function openProductList() {
@@ -34,7 +38,8 @@
   }
 
   function loadPage(page) {
-    document.getElementById("weeklyMenuApp").innerHTML = "";
+    console.log("rootElement",rootElement);
+    rootElement.innerHTML = "";
     if(page === "InitApplication") {
       openRemoteDocumentForm();
     } else if(page === "List") {
