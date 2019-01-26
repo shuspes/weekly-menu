@@ -1,6 +1,12 @@
 var RemoteStorage = (function() {
   var RemoteStorage = function(remoteDocument) {
+    this.remoteDocumentId = "weeklyMenuRemoteDocument";
     this.remoteDocument = remoteDocument;    
+  };
+
+  RemoteStorage.prototype.getRemoteDocument = function() {
+    this.remoteDocument = localStorage.getItem(this.remoteDocumentId);
+    return this.remoteDocument;
   };
 
   RemoteStorage.prototype.getData = function() {
